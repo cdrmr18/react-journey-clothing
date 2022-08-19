@@ -4,7 +4,7 @@ import "./authentication.styles.scss";
 
 const Authentication = () => {
   return (
-    <div className="sign-in-container">
+    <div className="authentication-container">
       <SignInForm />
       <SignUpForm />
     </div>
