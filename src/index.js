@@ -1,15 +1,18 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import "./index.scss";
 import App from "./App";
+import { UserProvider } from "./components/context/user.context";
 import reportWebVitals from "./reportWebVitals";
+import "./index.scss";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <UserProvider>
+        <App />
+      </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
