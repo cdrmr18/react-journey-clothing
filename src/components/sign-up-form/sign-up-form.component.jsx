@@ -5,7 +5,7 @@ import {
 } from "../utils/firebase/firebase.utils.js";
 import FormInput from "../form-input/form-input.components.jsx";
 import Button from "../button/button.component.jsx";
-import "./sign-up-form.styles.scss";
+import { SignUpContainer } from "./sign-up-form.styles.jsx";
 
 const defaultFormFields = {
   displayName: "",
@@ -56,7 +56,7 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="sign-up-container">
+    <SignUpContainer>
       <h2>Don' have an account?</h2>
       <form onSubmit={handleSubmit}>
         <FormInput
@@ -96,7 +96,7 @@ const SignUpForm = () => {
         />
         <Button type="sumbit">Sign up</Button>
       </form>
-    </div>
+    </SignUpContainer>
   );
 };
 
