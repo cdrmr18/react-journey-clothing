@@ -1,4 +1,5 @@
-import { createContext, useReducer, useEffect } from "react";
+import { createContext, useReducer } from "react";
+import { createAction } from "../../components/utils/reducer/reducer.utils";
 
 export const addCartItem = (cartItems, productToAdd) => {
   const existingCartItem = cartItems.find(
@@ -110,19 +111,17 @@ export const CartProvider = ({ children }) => {
       (total, cartItem) => total + cartItem.quantity * cartItem.price,
       0
     );
-
-    dispatch({
-      type: CART_ACTION_TYPES.SET_CART_ITEMS,
-      payload: {
+    dispatch(
+      createAction(CART_ACTION_TYPES.SET_CART_ITEMS, {
         cartItems: newCartItems,
         cartTotal: newCartTotal,
         cartQuantity: newCartQuantity,
-      },
-    });
+      })
+    );
   };
 
   const setIsVisible = (bool) => {
-    dispatch({ type: CART_ACTION_TYPES.SET_IS_VISIBLE, payload: bool });
+    dispatch(createAction(CART_ACTION_TYPES.SET_IS_VISIBLE, bool));
   };
 
   const value = {
