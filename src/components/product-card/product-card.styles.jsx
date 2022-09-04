@@ -31,18 +31,19 @@ export const ProductCardContainer = styled.div`
     display: none;
   }
 `;
+
 export const Footer = styled.div`
-  .footer {
     width: 100%;
     height: 5%;
     display: flex;
     justify-content: space-between;
     font-size: 18px;
+
     .name {
       width: 90%;
       margin-bottom: 15px;
     }
+
     .price {
       width: 10%;
-  }
 `;
