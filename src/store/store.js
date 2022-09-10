@@ -1,7 +1,7 @@
 import { compose, createStore, applyMiddleware } from "redux";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import createSagaMIddleware from "redux-saga";
+import createSagaMiddleware from "redux-saga";
 import { rootSaga } from "./root-saga/root-saga";
 import logger from "redux-logger";
 
@@ -13,7 +13,7 @@ const persistConfig = {
   whitelist: ["cart"],
 };
 
-const sagaMiddleware = createSagaMIddleware();
+const sagaMiddleware = createSagaMiddleware();
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
